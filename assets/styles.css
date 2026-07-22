@@ -250,6 +250,16 @@ html:not([data-theme]) .icon-sun { display: none; }
 .results-strip dt { font-family: var(--font-display); font-size: 1.7rem; color: var(--accent); }
 .results-strip dd { color: var(--text-faint); font-size: 0.87rem; margin-top: 6px; }
 
+/* ---------- writing ---------- */
+.writing-list { display: grid; gap: 18px; max-width: 920px; }
+.writing-item { display: block; color: inherit; padding: 24px 28px; transition: transform 0.2s var(--ease), border-color 0.2s; }
+.writing-item:hover { text-decoration: none; transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+.writing-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.writing-item h3 { font-size: 1.12rem; margin-bottom: 8px; color: var(--text); }
+.writing-item p { color: var(--text-soft); font-size: 0.94rem; margin-bottom: 10px; }
+.writing-cta { font-weight: 600; font-size: 0.88rem; color: var(--accent); }
+.writing-more { margin-top: 26px; color: var(--text-faint); font-size: 0.94rem; max-width: 920px; }
+
 /* ---------- timeline ---------- */
 .timeline { position: relative; margin-top: 46px; display: grid; gap: 34px; }
 .timeline::before {

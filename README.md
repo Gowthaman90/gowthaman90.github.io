@@ -11,6 +11,7 @@ Live at **[gowthaman90.github.io](https://gowthaman90.github.io/)**.
 - 🧪 [mcp-defense-bench](https://github.com/Gowthaman90/mcp-defense-bench) — the first open, vendor-neutral benchmark of MCP defensive coverage · [live leaderboard](https://gowthaman90.github.io/mcp-defense-bench/)
 - 📄 *Measuring the Defenders* — [Figshare DOI](https://doi.org/10.6084/m9.figshare.32978657) · [Zenodo DOI](https://doi.org/10.5281/zenodo.21346206)
 - 🥒 [picklefort](https://github.com/Gowthaman90/picklefort) — safe loading & scanning of AI/ML model files
+- ✍️ Writing on [Medium](https://medium.com/@agowthaman90) and [DEV](https://dev.to/gowthaman90)
 
 ## Stack
 
