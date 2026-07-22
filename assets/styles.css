@@ -168,7 +168,7 @@ html:not([data-theme]) .icon-sun { display: none; }
 }
 .hero-photo { margin: 0; justify-self: center; position: relative; }
 .hero-photo img {
-  display: block; width: min(330px, 100%); height: auto;
+  display: block; width: min(290px, 100%); max-width: 100%; height: auto;
   border-radius: 22px; border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
