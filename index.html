@@ -104,8 +104,8 @@
       </div>
       <dl class="hero-stats reveal" aria-label="Career highlights">
         <div><dt><span class="stat-num" data-count="13">13</span>+</dt><dd>years in enterprise architecture</dd></div>
-        <div><dt><span class="stat-num" data-count="24">24</span></dt><dd>MCP attack vectors benchmarked &amp; framework-mapped</dd></div>
-        <div><dt><span class="stat-num" data-count="63">63</span>%</dt><dd>measured attack-surface coverage — top of the public leaderboard</dd></div>
+        <div><dt><span class="stat-num" data-count="32">32</span></dt><dd>MCP attack vectors benchmarked &amp; mapped to 7 frameworks</dd></div>
+        <div><dt><span class="stat-num" data-count="61">61</span>%</dt><dd>measured attack-surface coverage — broadest of any tool on the public leaderboard</dd></div>
         <div><dt><span class="stat-num" data-count="9">9</span></dt><dd>large-scale enterprise platforms delivered</dd></div>
       </dl>
     </div>
@@ -130,7 +130,8 @@
           The through-line is the same in both: <em>an architecture is only as good as what it can prove.</em>
           Provable availability, provable compliance, provable security coverage. That conviction shaped a
           research program whose central artifact is the first open, vendor-neutral benchmark of MCP
-          defensive tooling — and a security proxy that the benchmark itself drove from 9% to 63% measured coverage.
+          defensive tooling — and a security proxy that the benchmark itself drove from 9% to 61% measured coverage,
+          then held to account with a pre-registered held-out test set.
         </p>
       </div>
     </div>
@@ -205,19 +206,21 @@
       <div class="research-grid">
 
         <article class="card research-card reveal">
-          <div class="card-tags"><span class="tag tag-teal">Security Proxy</span><span class="tag">TypeScript</span><span class="tag">Apache-2.0</span></div>
+          <div class="card-tags"><span class="tag tag-teal">Security Proxy</span><span class="tag">TypeScript</span><span class="tag">Apache-2.0</span><span class="tag">v1.0 · MCP SDK 2.0</span></div>
           <h3>🛡️ mcp-bastion</h3>
           <p class="card-sub">Runtime reliability &amp; security proxy for the Model Context Protocol</p>
           <p>
             Sits between any MCP client (Claude&nbsp;Code, Cursor, Cline, Windsurf, Zed…) and its servers —
             self-healing connections, runtime tool-security, and a compliance-mapped audit trail. Defends against
             documented MCP attacks: tool poisoning, rug-pulls, cross-server exfiltration, command injection,
-            server impersonation.
+            server impersonation. v1.0 (September 2026) is rebuilt on the MCP SDK 2.0 line and speaks both
+            protocol eras — adding the two defences only a gateway can provide once the protocol is stateless:
+            custody of the in-band continuation state and a consent gate on in-band input requests.
           </p>
           <ul class="mini-list">
-            <li><strong>63% measured coverage</strong> of a 24-vector attack surface — highest of any tool on the public leaderboard</li>
-            <li><strong>First and only measured defense</strong> against ShareLock multi-tool split poisoning and cross-server data-flow exfiltration</li>
-            <li><strong>Evasion-robust</strong> — survives zero-width, homoglyph, and base64 obfuscation</li>
+            <li><strong>61% measured coverage</strong> of a 32-vector attack surface — broadest of any tool on the public leaderboard; <strong>77%</strong> of the vectors introduced by the July 2026 protocol revision</li>
+            <li><strong>Held to account</strong> — 55% development vs. 43% held-out on the original 24 vectors, published as measured: structural checks generalise, phrase heuristics do not</li>
+            <li><strong>First measured tool</strong> to detect ShareLock's published split-poisoning staging pattern and cross-server data-flow exfiltration; evasion normalisation for zero-width, homoglyph and base64</li>
             <li>Listed in the official <strong>MCP Registry</strong>; author-verified on Glama</li>
           </ul>
           <div class="card-links">
@@ -227,18 +230,22 @@
         </article>
 
         <article class="card research-card reveal">
-          <div class="card-tags"><span class="tag tag-teal">Benchmark</span><span class="tag">CC-BY-4.0 data</span><span class="tag">Live leaderboard</span></div>
+          <div class="card-tags"><span class="tag tag-teal">Benchmark</span><span class="tag">CC-BY-4.0 data</span><span class="tag">Live leaderboard</span><span class="tag">v0.8</span></div>
           <h3>🧪 mcp-defense-bench</h3>
           <p class="card-sub">The first open, vendor-neutral benchmark of MCP defensive coverage</p>
           <p>
             While existing benchmarks measure how well an <em>agent</em> resists attacks, mcp-defense-bench measures
             how much of the MCP attack surface a <em>defensive tool</em> actually covers — every tool driven through
-            its real code, with matched benign controls, at <strong>zero false positives</strong> across the corpus.
+            its real code, with matched benign controls, coverage reported <strong>per protocol revision</strong>,
+            and — since September 2026 — three corpora: development, a <strong>pre-registered held-out set</strong>
+            written after every defender was frozen, and a 337-item benign-only set for a false-positive
+            <em>rate</em> with a confidence interval.
           </p>
           <ul class="mini-list">
-            <li><strong>24 attack vectors</strong> crosswalked to architectural layer, STRIDE, NIST AI RMF, NSA MCP guidance, OWASP LLM 2025 &amp; Agentic 2026</li>
-            <li><strong>Benchmark-guided hardening</strong> — drove mcp-bastion's coverage from 9% → 63%, each step re-verified at zero FPs</li>
-            <li><strong>Living benchmark</strong> — newly disclosed attacks verified against primary sources and added, with a CI regression gate</li>
+            <li><strong>32 attack vectors</strong> (8 introduced by the 2026-07-28 protocol revision, verified against the specification text) crosswalked to layer, STRIDE, NIST AI RMF, NSA MCP guidance, OWASP LLM 2025 &amp; Agentic 2026, EU AI Act obligations and ISO/IEC 42001 controls</li>
+            <li><strong>Mapping reliability measured</strong> — published rating codebook, blind second-rater pass (κ 0.75 / 0.94), every disagreement adjudicated in the open</li>
+            <li><strong>Benchmark-guided hardening</strong> — drove mcp-bastion from 9% → 61%, and from 44% → 77% on the new-era surface; the matched controls caught a false positive in the new defence before release</li>
+            <li><strong>Living benchmark</strong> — the first MCP security benchmark versioned against protocol revisions, with a CI regression gate</li>
           </ul>
           <div class="card-links">
             <a href="https://gowthaman90.github.io/mcp-defense-bench/" target="_blank" rel="noopener">Leaderboard ↗</a>
@@ -253,8 +260,9 @@
           <p class="card-sub">A Layer-Aware, Framework-Mapped Benchmark for MCP Security Proxies</p>
           <p>
             The research paper behind the benchmark: methodology, the 24-vector threat–control crosswalk,
-            zero-false-positive scoring protocol, and honest results — including where every measured tool,
-            my own included, still falls short. Currently under peer review at an international security venue.
+            matched-control scoring protocol, and honest results — including where every measured tool,
+            my own included, still falls short. A revised edition incorporating expert peer-review feedback
+            (held-out evaluation, larger benign corpus, inter-rater agreement) is under review at an international security venue.
           </p>
           <ul class="mini-list">
             <li>Openly archived with citable DOIs (Figshare + Zenodo)</li>
@@ -311,6 +319,21 @@
           </li>
           <li>
             <span class="dot" aria-hidden="true"></span>
+            Named peer reviewer on the <a href="https://cloudsecurityalliance.org/" target="_blank" rel="noopener">Cloud Security Alliance</a>
+            <em>Autonomous Pentest Assurance Standard</em> (v0.9): five editor-accepted comment threads on evaluator methodology, provenance binding and adversarial testing
+          </li>
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            Design contribution to the official <a href="https://github.com/modelcontextprotocol/registry/discussions/1463" target="_blank" rel="noopener">MCP Registry</a>
+            (publisher identity vs. artifact provenance) — a multi-round technical exchange with independent researchers and engineers
+          </li>
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            Independent scrutiny welcomed and credited: an external researcher's scoring-defect report was adopted as the benchmark's headline metric
+            (<a href="https://github.com/Gowthaman90/mcp-defense-bench/blob/main/docs/CHANGELOG-scoring.md" target="_blank" rel="noopener">changelog</a>)
+          </li>
+          <li>
+            <span class="dot" aria-hidden="true"></span>
             Ongoing research extends this program deeper into AI-agent security evaluation — details to follow after peer review
           </li>
         </ul>
@@ -318,10 +341,10 @@
 
       <!-- Results strip -->
       <dl class="results-strip reveal" aria-label="Research results">
-        <div><dt>9% → 63%</dt><dd>benchmark-driven coverage improvement, every step re-verified</dd></div>
-        <div><dt>0</dt><dd>false positives across the full test corpus with matched benign controls</dd></div>
-        <div><dt>5</dt><dd>security frameworks crosswalked — STRIDE · NIST AI RMF · NSA · OWASP LLM · OWASP Agentic</dd></div>
-        <div><dt>1,100+</dt><dd>monthly npm downloads (July 2026), 8 releases iterated in the open</dd></div>
+        <div><dt>9% → 61%</dt><dd>benchmark-driven coverage improvement on 32 vectors, every step re-verified</dd></div>
+        <div><dt>43%</dt><dd>held-out coverage on the original 24 vectors, published beside the 55% development figure</dd></div>
+        <div><dt>7</dt><dd>frameworks crosswalked — STRIDE · NIST AI RMF · NSA · OWASP LLM · OWASP Agentic · EU AI Act · ISO/IEC 42001</dd></div>
+        <div><dt>2,500+</dt><dd>npm downloads (Jul–Sep 2026); 12 releases iterated in the open, latest v1.0.2</dd></div>
       </dl>
     </div>
   </section>
