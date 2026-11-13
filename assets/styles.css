@@ -274,6 +274,16 @@ html:not([data-theme]) .icon-sun { display: none; }
 .writing-item h3 { font-size: 1.12rem; margin-bottom: 8px; color: var(--text); }
 .writing-item p { color: var(--text-soft); font-size: 0.94rem; margin-bottom: 10px; }
 .writing-cta { font-weight: 600; font-size: 0.88rem; color: var(--accent); }
+.writing-item[hidden] { display: none; }
+.writing-pager { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 22px; max-width: 920px; }
+.writing-pager[hidden] { display: none; }
+.writing-pager button { font: 600 0.88rem/1 var(--font-body); min-width: 40px; height: 40px; padding: 0 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface); color: var(--text-soft); cursor: pointer; transition: border-color 0.2s, color 0.2s, background 0.2s; }
+.writing-pager button:hover:not(:disabled) { border-color: color-mix(in srgb, var(--accent) 45%, transparent); color: var(--text); }
+.writing-pager button[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.writing-pager button:disabled { opacity: 0.4; cursor: default; }
+.writing-pager button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.writing-pager-status { margin-left: auto; color: var(--text-faint); font-size: 0.88rem; }
+@media (max-width: 560px) { .writing-pager { gap: 6px; } .writing-pager button { min-width: 36px; height: 38px; padding: 0 9px; font-size: 0.84rem; } .writing-pager-status { margin-left: 0; width: 100%; } }
 .writing-more { margin-top: 26px; color: var(--text-faint); font-size: 0.94rem; max-width: 920px; }
 
 /* ---------- timeline ---------- */
